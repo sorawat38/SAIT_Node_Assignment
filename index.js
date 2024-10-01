@@ -30,17 +30,19 @@ app.get("/contact", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "contact.html"));
 });
 
+app.get("/submitted", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "form-submitted.html"));
+});
+
 app.get("/submit", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "registration.html"));
 });
 
 app.post("/submit", (req, res) => {
-  console.log(req.body);
-  let { firstName } = req.body;
-  console.log(firstName);
+  // let { contactFirstName, contactLastName, contactEmail } = req.body;
+  console.log(`form submit data: \n${req.body}`);
 
-  //   res.send(`{ status: "success"}`);
-  //   res.json({ status: "success" });
+  res.redirect("/submitted");
 });
 
 // generic endpoint
