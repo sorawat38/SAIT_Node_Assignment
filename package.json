@@ -1,0 +1,26 @@
+{
+  "name": "sait-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorawat38/SAIT_Node_Assignment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sorawat38/SAIT_Node_Assignment/issues"
+  },
+  "homepage": "https://github.com/sorawat38/SAIT_Node_Assignment#readme",
+  "description": ""
+}
