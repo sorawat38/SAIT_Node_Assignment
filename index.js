@@ -40,7 +40,7 @@ app.get("/submit", (req, res) => {
 
 app.post("/submit", (req, res) => {
   // let { contactFirstName, contactLastName, contactEmail } = req.body;
-  console.log(`form submit data: \n${req.body}`);
+  console.log(req.body);
 
   res.redirect("/submitted");
 });
