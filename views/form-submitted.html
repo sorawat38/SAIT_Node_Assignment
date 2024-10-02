@@ -26,13 +26,24 @@
         </div>
     </nav>
     <main>
-        <div class="container col-xxl-8 px-4 py-5 d-flex justify-content-center my-5">
+        <div class="container col-xxl-8 px-4 py-5 my-5 d-flex flex-column justify-content-center text-center">
             <h1>Thank you for submit</h1>
+            <h3>This will redirect back to homepage in <span id="counter">5</span> second(s)</h3>
         </div>
     </main>
+    <script>
+        let count = parseInt(document.getElementById("counter").innerHTML);
+        var interval = setInterval(() => {
+            document.getElementById("counter").innerHTML = --count;
+            if (count <= 0) {
+                clearInterval(interval);
+                window.location.replace("/");
+            }
+        }, 1000);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
