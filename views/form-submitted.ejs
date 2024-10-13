@@ -35,9 +35,15 @@
         class="container col-xxl-8 px-4 py-5 my-5 d-flex flex-column justify-content-center text-center"
       >
         <h1>Thank you for submit</h1>
+        <div>
+          <p class="text-xxl">
+            Your name: <%= request.firstName + " " + request.lastName%>
+          </p>
+          <p class="text-xxl">Your email: <%= request.email %></p>
+        </div>
         <h3>
           This will redirect back to homepage in
-          <span id="counter">5</span> second(s)
+          <span id="counter">10</span> second(s)
         </h3>
       </div>
     </main>
