@@ -22,6 +22,5 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 router.post("/contact/submit", validateContactForm, handleFormSubmission);
-router.get("/contact/submit/success", renderFormRegistrationSuccess);
 
 module.exports = router;
