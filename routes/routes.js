@@ -1,6 +1,5 @@
 const express = require("express");
 const {
-  renderFormRegistration,
   handleFormSubmission,
   renderFormRegistrationSuccess,
 } = require("../controllers/formController");

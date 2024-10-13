@@ -9,7 +9,6 @@ const renderFormRegistrationSuccess = (req, res) => {
 };
 
 module.exports = {
-  renderFormRegistration,
   handleFormSubmission,
   renderFormRegistrationSuccess,
 };
