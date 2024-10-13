@@ -12,9 +12,6 @@ const PORT = 8000;
 // Createing a static directory
 app.use(express.static(path.join(__dirname, "public")));
 
-// Middleware for parsing body of forms
-// app.use(express.urlencoded({ extended: true }));
-
 // Middleware
 app.use(express.json());
 app.use(logger);
