@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>About</title>
     <%- include('include/header'); -%>
-</head>
+  </head>
 
-<body>
-<nav class="p-3 text-bg-dark">
-    <div class="container">
+  <body>
+    <nav class="p-3 text-bg-dark">
+      <div class="container">
         <div
-                class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-            <ul
-                    class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-            >
-                <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
-                <li>
-                    <a
-                            href="/about"
-                            class="nav-link px-2 text-secondary"
-                            aria-current="page"
-                    >About</a
-                    >
-                </li>
-                <li>
-                    <a href="/contact" class="nav-link px-2 text-white">Contact</a>
-                </li>
-            </ul>
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+            <li>
+              <a
+                href="/about"
+                class="nav-link px-2 text-secondary"
+                aria-current="page"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="nav-link px-2 text-white">Contact</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
-<main>
-    <div class="container col-xxl-8 px-4 py-5">
+      </div>
+    </nav>
+    <main>
+      <div class="container col-xxl-8 px-4 py-5">
         <div class="d-flex flex-row justify-content-between">
-            <% employees.forEach(employee => { %>
-                <div class="col-lg-4 mx-4">
-                    <img
-                            src="images/<%= employee.photo %>"
-                            alt="<%= employee.firstName %>'s photo"
-                            width="140"
-                            height="140"
-                            class="rounded-circle"
-                    />
-                    <h2 class="fw-bold">
-                        <%= employee.firstName + " " + employee.lastName %>
-                    </h2>
-                    <h4 class="fw-normal"><%= employee.position %></h4>
-                    <p><%= employee.bio %></p>
-                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
-                </div>
-            <% }) %>
+          <% employees.forEach(employee => { %>
+          <div class="col-lg-4 mx-4">
+            <img
+              src="images/<%= employee.photo %>"
+              alt="<%= employee.firstName %>'s photo"
+              width="140"
+              height="140"
+              class="rounded-circle"
+            />
+            <h2 class="fw-bold">
+              <%= employee.firstName + " " + employee.lastName %>
+            </h2>
+            <h4 class="fw-normal"><%= employee.position %></h4>
+            <p><%= employee.bio %></p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          </div>
+          <% }) %>
         </div>
-    </div>
-</main>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-></script>
-</body>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
