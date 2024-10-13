@@ -2,7 +2,7 @@ const express = require("express");
 const {
   validateContactForm,
   handleFormSubmission,
-  renderFormRegistrationSuccess,
+  renderContactPage,
 } = require("../controllers/contact");
 
 const router = express.Router();
@@ -18,9 +18,7 @@ router.get("/about", (req, res) => {
 });
 
 // Contact page
-router.get("/contact", (req, res) => {
-  res.render("contact");
-});
+router.get("/contact", renderContactPage);
 router.post("/contact/submit", validateContactForm, handleFormSubmission);
 
 module.exports = router;

@@ -65,7 +65,12 @@ const handleFormSubmission = async (req, res) => {
   }
 };
 
+const renderContactPage = async (req, res) => {
+  res.render("contact");
+};
+
 module.exports = {
   validateContactForm,
+  renderContactPage,
   handleFormSubmission,
 };
