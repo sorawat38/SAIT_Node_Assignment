@@ -66,7 +66,13 @@ const handleFormSubmission = async (req, res) => {
 };
 
 const renderContactPage = async (req, res) => {
-  res.render("contact");
+  try {
+    // query data from database
+    const contacts = await Contact.findAll();
+    res.render("contact", { contacts });
+  } catch (error) {
+    console.error(error); // TODO: handle error later
+  }
 };
 
 module.exports = {

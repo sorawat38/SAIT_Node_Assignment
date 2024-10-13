@@ -128,8 +128,27 @@
                     <small class="text-body-secondary">By clicking Submit, you agree to the terms of use.</small>
                 </form>
             </div>
-            <hr class="featurette-divider" />
-            
+            <hr class="featurette-divider"/>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Comment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% contacts.forEach(contact => { %>
+                    <tr>
+                        <th scope="row"><%= contact.id %></th>
+                        <td><%= contact.firstName + " " + contact.lastName %></td>
+                        <td><%= contact.email %></td>
+                        <td><%= contact.comment %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
