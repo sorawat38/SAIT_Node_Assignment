@@ -61,7 +61,7 @@ const handleFormSubmission = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error(error);
+    console.error(error); // handle error later
   }
 };
 
