@@ -1,169 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Contact</title>
     <%- include('include/header'); -%>
-  </head>
+</head>
 
-  <body>
-    <nav class="p-3 text-bg-dark">
-      <div class="container">
-        <div
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-        >
-          <ul
-            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-          >
-            <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
-            <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
-            <li>
-              <a
-                href="/contact"
-                class="nav-link px-2 text-secondary"
-                aria-current="page"
-                >Contact</a
-              >
-            </li>
-          </ul>
+<body>
+<nav class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
+                <li>
+                    <a href="/contact" class="nav-link px-2 text-secondary" aria-current="page">Contact</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-    <main>
-      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    </div>
+</nav>
+<main>
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
-          <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
-              We'd Love to Hear From You!
-            </h1>
-            <p class="col-lg-10 fs-4">
-              Whether you're looking to capture beautiful family moments or need
-              help transforming your space, we're here to assist you. Get in
-              touch with us for more information about our services, and let's
-              create something special together. We'll respond to your inquiry
-              as soon as possible to discuss how we can make your vision a
-              reality.
-            </p>
-          </div>
-          <div class="col-md-10 mx-auto col-lg-5">
-            <form
-              action="/contact/submit"
-              method="post"
-              class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
-            >
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="contactFirstName"
-                  placeholder="First Name"
-                  value="<%= typeof request != 'undefined' && request.contactFirstName ? request.contactFirstName : '' %>"
-                />
-                <label for="contactFirstName">First Name</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const firstNameError = errors.mapped()["contactFirstName"] %> <%
-                if (firstNameError != null) { %>
-                <p class="text-danger"><%= firstNameError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="contactLastName"
-                  placeholder="Last Name"
-                  value="<%= typeof request != 'undefined' && request.contactLastName ? request.contactLastName : '' %>"
-                />
-                <label for="contactLastName">Last Name</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const lastNameError = errors.mapped()["contactLastName"] %> <%
-                if (lastNameError != null) { %>
-                <p class="text-danger"><%= lastNameError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="contactEmail"
-                  placeholder="name@example.com"
-                  value="<%= typeof request != 'undefined' && request.contactEmail ? request.contactEmail : '' %>"
-                />
-                <label for="contactEmail">Email address</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const emailError = errors.mapped()["contactEmail"] %> <% if
-                (emailError != null) { %>
-                <p class="text-danger"><%= emailError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="tel"
-                  class="form-control"
-                  name="contactPhone"
-                  placeholder="(123)456-7890"
-                  value="<%= typeof request != 'undefined' && request.contactPhone ? request.contactPhone : '' %>"
-                />
-                <label for="contactPhone">Phone number</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const phoneError = errors.mapped()["contactPhone"] %> <% if
-                (phoneError != null) { %>
-                <p class="text-danger"><%= phoneError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="contactCity"
-                  placeholder="Calgary"
-                  value="<%= typeof request != 'undefined' && request.contactCity ? request.contactCity : '' %>"
-                />
-                <label for="contactCity">City</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const cityError = errors.mapped()["contactCity"] %> <% if
-                (cityError != null) { %>
-                <p class="text-danger"><%= cityError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="contactPostalCode"
-                  placeholder="A9A 9A9"
-                  value="<%= typeof request != 'undefined' && request.contactPostalCode ? request.contactPostalCode : '' %>"
-                />
-                <label for="contactPostalCode">Postal Code</label>
-                <% if (typeof errors !== 'undefined' && errors != null) { %> <%
-                const postalCodeError = errors.mapped()["contactPostalCode"] %>
-                <% if (postalCodeError != null) { %>
-                <p class="text-danger"><%= postalCodeError.msg %></p>
-                <% } %> <% } %>
-              </div>
-              <div class="form-floating mb-3">
-                <textarea
-                  class="form-control"
-                  placeholder="Leave comment here"
-                  name="contactComment"
-                ></textarea>
-                <label for="contactComment">Comment</label>
-              </div>
-              <button class="w-100 btn btn-lg btn-primary" type="submit">
-                Submit
-              </button>
-              <hr class="my-4" />
-              <small class="text-body-secondary"
-                >By clicking Submit, you agree to the terms of use.</small
-              >
-            </form>
-          </div>
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+                    We'd Love to Hear From You!
+                </h1>
+                <p class="col-lg-10 fs-4">
+                    Whether you're looking to capture beautiful family moments or need
+                    help transforming your space, we're here to assist you. Get in
+                    touch with us for more information about our services, and let's
+                    create something special together. We'll respond to your inquiry
+                    as soon as possible to discuss how we can make your vision a
+                    reality.
+                </p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form action="/contact/submit" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="contactFirstName" placeholder="First Name"
+                               value="<%= typeof request != 'undefined' && request.contactFirstName ? request.contactFirstName : '' %>"/>
+                        <label for="contactFirstName">First Name</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const firstNameError = errors.mapped()["contactFirstName"] %>
+                            <% if (firstNameError != null) { %>
+                                <p class="text-danger">
+                                    <%= firstNameError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="contactLastName" placeholder="Last Name"
+                               value="<%= typeof request != 'undefined' && request.contactLastName ? request.contactLastName : '' %>"/>
+                        <label for="contactLastName">Last Name</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const lastNameError = errors.mapped()["contactLastName"] %>
+                            <% if (lastNameError != null) { %>
+                                <p class="text-danger">
+                                    <%= lastNameError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="contactEmail" placeholder="name@example.com"
+                               value="<%= typeof request != 'undefined' && request.contactEmail ? request.contactEmail : '' %>"/>
+                        <label for="contactEmail">Email address</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const emailError = errors.mapped()["contactEmail"] %>
+                            <% if (emailError != null) { %>
+                                <p class="text-danger">
+                                    <%= emailError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" name="contactPhone" placeholder="(123)456-7890"
+                               value="<%= typeof request != 'undefined' && request.contactPhone ? request.contactPhone : '' %>"/>
+                        <label for="contactPhone">Phone number</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const phoneError = errors.mapped()["contactPhone"] %>
+                            <% if (phoneError != null) { %>
+                                <p class="text-danger">
+                                    <%= phoneError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="contactCity" placeholder="Calgary"
+                               value="<%= typeof request != 'undefined' && request.contactCity ? request.contactCity : '' %>"/>
+                        <label for="contactCity">City</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const cityError = errors.mapped()["contactCity"] %>
+                            <% if (cityError != null) { %>
+                                <p class="text-danger">
+                                    <%= cityError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="contactPostalCode" placeholder="A9A 9A9"
+                               value="<%= typeof request != 'undefined' && request.contactPostalCode ? request.contactPostalCode : '' %>"/>
+                        <label for="contactPostalCode">Postal Code</label>
+                        <% if (typeof errors !== 'undefined' && errors != null) { %>
+                            <% const postalCodeError = errors.mapped()["contactPostalCode"] %>
+                            <% if (postalCodeError != null) { %>
+                                <p class="text-danger">
+                                    <%= postalCodeError.msg %>
+                                </p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave comment here"
+                                          name="contactComment"></textarea>
+                        <label for="contactComment">Comment</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">
+                        Submit
+                    </button>
+                    <hr class="my-4"/>
+                    <small class="text-body-secondary">By clicking Submit, you agree to the terms of use.</small>
+                </form>
+            </div>
         </div>
-      </div>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+</script>
+</body>
+
 </html>
