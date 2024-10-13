@@ -1,13 +1,23 @@
 const express = require("express");
+const env = require("dotenv");
 const path = require("path");
 
-// const bodyParser = require("body-parser");
+const { sequelize } = require("./config/db");
 const logger = require("./middleware/logger");
 const routes = require("./routes/routes");
 
+// load env
+env.config();
+
 // init config
 const app = express();
-const PORT = 8000;
+const port = process.env.PORT || 8000;
+
+// sync DDL
+sequelize
+  .sync({ force: false })
+  .then(console.log("All models were synchronized successfully."))
+  .catch((err) => console.error(err));
 
 // Createing a static directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -21,6 +31,6 @@ app.use(logger);
 app.use(routes);
 
 // start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });

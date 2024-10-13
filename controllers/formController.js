@@ -1,4 +1,5 @@
 const { body, validationResult } = require("express-validator");
+const Contact = require("../models/contact");
 
 const validateContactForm = [
   body("contactFirstName")
@@ -30,20 +31,38 @@ const validateContactForm = [
     .withMessage("Invalid Canadian postal code"),
   body("contactComment").optional().isString(),
 ];
-const handleFormSubmission = (req, res) => {
-  console.log(req.body);
+
+const handleFormSubmission = async (req, res) => {
+  // handle when validate error
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log(errors);
     return res.render("contact", { request: req.body, errors: errors });
   }
-  res.render("form-submitted", {
-    request: {
+
+  try {
+    // save data into database
+    await Contact.create({
       firstName: req.body.contactFirstName,
       lastName: req.body.contactLastName,
       email: req.body.contactEmail,
-    },
-  });
+      phoneNumber: req.body.contactPhone,
+      city: req.body.contactCity,
+      postalCode: req.body.contactPostalCode,
+      comment: req.body.contactComment,
+    });
+
+    // render thank you page
+    res.render("form-submitted", {
+      request: {
+        firstName: req.body.contactFirstName,
+        lastName: req.body.contactLastName,
+        email: req.body.contactEmail,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = {
