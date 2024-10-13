@@ -3,7 +3,7 @@ const {
   validateContactForm,
   handleFormSubmission,
   renderFormRegistrationSuccess,
-} = require("../controllers/formController");
+} = require("../controllers/contact");
 
 const router = express.Router();
 
