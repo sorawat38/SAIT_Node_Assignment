@@ -37,15 +37,16 @@ const handleFormSubmission = (req, res) => {
     console.log(errors);
     return res.render("contact", { request: req.body, errors: errors });
   }
-  res.redirect("/contact/submit/success");
-};
-
-const renderFormRegistrationSuccess = (req, res) => {
-  res.render("form-submitted");
+  res.render("form-submitted", {
+    request: {
+      firstName: req.body.contactFirstName,
+      lastName: req.body.contactLastName,
+      email: req.body.contactEmail,
+    },
+  });
 };
 
 module.exports = {
   validateContactForm,
   handleFormSubmission,
-  renderFormRegistrationSuccess,
 };
