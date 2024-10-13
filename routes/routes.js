@@ -26,8 +26,7 @@ router.get("/contact", (req, res) => {
 });
 
 // Submit endpoint handler
-router.get("/submit", renderFormRegistration);
-router.post("/submit", handleFormSubmission);
+router.route("/submit").get(renderFormRegistration).post(handleFormSubmission);
 router.get("/submit/success", renderFormRegistrationSuccess);
 
 module.exports = router;
