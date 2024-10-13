@@ -3,7 +3,7 @@ const { sequelize } = require("../config/db");
 
 const Employee = sequelize.define("employee", {
   id: {
-    type: DataTypes.UUIDV4,
+    type: DataTypes.UUID,
     primaryKey: true,
     allowNull: false,
   },
