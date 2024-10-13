@@ -1,4 +1,5 @@
 const express = require("express");
+const { renderAboutPage } = require("../controllers/about");
 const {
   validateContactForm,
   handleFormSubmission,
@@ -14,9 +15,7 @@ router.get("/", (req, res) => {
 });
 
 // About page
-router.get("/about", (req, res) => {
-  res.render("about");
-});
+router.get("/about", renderAboutPage);
 
 // Contact page
 router.get("/contact", renderContactPage);
