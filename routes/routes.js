@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const {
   renderFormRegistration,
   handleFormSubmission,
@@ -8,25 +7,21 @@ const {
 
 const router = express.Router();
 
-const rootDir = path.dirname(require.main.filename);
-
 // Home (root) page
 router.get("/", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "index.html"));
+  res.render("index");
 });
 
 // About page
-router.get("/test/about", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "about.html"));
+router.get("/about", (req, res) => {
+  res.render("about");
 });
 
 // Contact page
 router.get("/contact", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "contact.html"));
+  res.render("contact");
 });
-
-// Submit endpoint handler
-router.route("/submit").get(renderFormRegistration).post(handleFormSubmission);
-router.get("/submit/success", renderFormRegistrationSuccess);
+router.post("/contact/submit", handleFormSubmission);
+router.get("/contact/submit/success", renderFormRegistrationSuccess);
 
 module.exports = router;
