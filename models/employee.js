@@ -24,7 +24,7 @@ const Employee = sequelize.define("employee", {
     allowNull: true,
   },
   bio: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
   },
 });
