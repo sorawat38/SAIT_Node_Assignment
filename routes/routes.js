@@ -1,5 +1,6 @@
 const express = require("express");
 const {
+  validateContactForm,
   handleFormSubmission,
   renderFormRegistrationSuccess,
 } = require("../controllers/formController");
@@ -20,7 +21,7 @@ router.get("/about", (req, res) => {
 router.get("/contact", (req, res) => {
   res.render("contact");
 });
-router.post("/contact/submit", handleFormSubmission);
+router.post("/contact/submit", validateContactForm, handleFormSubmission);
 router.get("/contact/submit/success", renderFormRegistrationSuccess);
 
 module.exports = router;
