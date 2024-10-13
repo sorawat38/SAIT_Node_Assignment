@@ -75,8 +75,22 @@ const renderContactPage = async (req, res) => {
   }
 };
 
+const deleteContactHandler = async (req, res) => {
+  try {
+    await Contact.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.redirect("/contact");
+  } catch (error) {
+    console.error(error); // TODO: handle error later
+  }
+};
+
 module.exports = {
   validateContactForm,
   renderContactPage,
   handleFormSubmission,
+  deleteContactHandler,
 };

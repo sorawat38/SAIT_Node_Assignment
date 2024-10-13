@@ -3,6 +3,7 @@ const {
   validateContactForm,
   handleFormSubmission,
   renderContactPage,
+  deleteContactHandler,
 } = require("../controllers/contact");
 
 const router = express.Router();
@@ -19,6 +20,7 @@ router.get("/about", (req, res) => {
 
 // Contact page
 router.get("/contact", renderContactPage);
+router.get("/contact/delete/:id", deleteContactHandler);
 router.post("/contact/submit", validateContactForm, handleFormSubmission);
 
 module.exports = router;
