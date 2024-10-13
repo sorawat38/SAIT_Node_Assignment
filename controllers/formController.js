@@ -37,7 +37,7 @@ const handleFormSubmission = (req, res) => {
     console.log(errors);
     return res.render("contact", { request: req.body, errors: errors });
   }
-  res.redirect("/submit/success");
+  res.redirect("/contact/submit/success");
 };
 
 const renderFormRegistrationSuccess = (req, res) => {
