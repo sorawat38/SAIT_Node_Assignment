@@ -21,11 +21,11 @@ const Employee = sequelize.define("employee", {
   },
   photo: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   bio: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 });
 
