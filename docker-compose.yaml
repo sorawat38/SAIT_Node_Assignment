@@ -1,6 +1,24 @@
 version: "3.8"
 
 services:
+  app:
+    build:
+      context: .
+    container_name: node_assignment_app
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: rootpassword
+      DB_NAME: my_db
+    depends_on:
+      - db
+    command: npm start
+
   db:
     image: mysql:8.0
     container_name: node_assignment_mysql
