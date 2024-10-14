@@ -14,7 +14,6 @@
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Usage](#usage)
-5. [API Endpoints](#api-endpoints)
 
 ## Project Overview
 
