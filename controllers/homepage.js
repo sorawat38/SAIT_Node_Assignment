@@ -1,10 +1,7 @@
-const renderHomePage = async (req, res) => {
-  // Genearte random greetings
-  const greetings = ["Hello", "Bonjour", "Hola", "Ciao"];
-  const randomGreetings = (greetings) =>
-    greetings[Math.floor(Math.random() * greetings.length)];
+const { randomGreetings } = require("../utils/greeting");
 
-  res.render("index", { greetings: randomGreetings(greetings) });
+const renderHomePage = async (req, res) => {
+  res.render("index", { greetings: randomGreetings() });
 };
 
 module.exports = { renderHomePage };
