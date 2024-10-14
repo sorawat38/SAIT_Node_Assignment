@@ -59,12 +59,18 @@ npm start
 To run the application using Docker Compose, follow these steps:  
 
 1. **Ensure Docker and Docker Compose** are installed on your machine.  
-2. **Build and start the containers** by running the following command in the project directory:  
-```docker-compose up --build ```
+2. **Build and start the containers** by running the following command in the project directory:
 
-    This command will build the Docker images and start the containers as defined in the docker-compose.yaml file.  
+```sh
+docker-compose up --build 
+```
+
+This command will build the Docker images and start the containers as defined in the docker-compose.yaml file.  
 3. **Access the application** by navigating to http://localhost:8000 in your web browser.  
 4. **Stop the containers** by pressing `Ctrl+C` in the terminal where Docker Compose is running, or by running:  
-```docker-compose down```
 
-    This command will stop and remove the containers.
+```sh
+docker-compose down
+```
+
+This command will stop and remove the containers.
