@@ -67,7 +67,7 @@ VALUES
     '4035557890',
     'Calgary',
     'A9A 9A9',
-    'test',
+    'This is dummy data',
     '2024-10-13 07:26:08',
     '2024-10-13 07:26:08'
   ),
@@ -79,7 +79,7 @@ VALUES
     '403-123-4567',
     'Calgary',
     'T2P 1J9',
-    'This is a test comment.',
+    'This is dummy data',
     '2024-10-13 12:00:00',
     '2024-10-13 12:00:00'
   ),
@@ -91,7 +91,7 @@ VALUES
     '587-987-6543',
     'Toronto',
     'M5G 2L2',
-    'Another sample comment.',
+    'Another dummy data',
     '2024-10-13 12:00:00',
     '2024-10-13 12:00:00'
   ),
@@ -115,7 +115,7 @@ VALUES
     '780-765-4321',
     'Edmonton',
     'T5J 3S2',
-    'Additional test comment.',
+    'Additional dummy data',
     '2024-10-13 12:00:00',
     '2024-10-13 12:00:00'
   );
