@@ -23,7 +23,7 @@ This project is an information website that allow user to view, create and delet
 
 - **Homepage:** A landing page that provides an overview of the website.
 - **About Page:** Displays information about the team members, queried from the database.
-- **Contact Page:** Allows users to send their information through a form. The submitted contact information is displayed, and users can delete it as well.
+- **Contact Page:** Allows users to send their information through a form. The form handle the seamless validation to improve user experience. The submitted contact information is displayed, and users can delete it as well.
 - **404 Page:** A custom error page that is shown when a user navigates to a non-existent route.
 
 ## Technologies Used
