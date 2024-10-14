@@ -30,6 +30,11 @@ app.use(logger);
 // Routes
 app.use(routes);
 
+// Not found page
+app.use((req, res) => {
+  res.status(404).render("404");
+});
+
 // start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

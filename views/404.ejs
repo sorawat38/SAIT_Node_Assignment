@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Not found</title>
+    <%- include('include/header'); -%>
+  </head>
+  <body>
+    <nav class="p-3 text-bg-dark">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="/" class="nav-link px-2 text-white">Home</a>
+            </li>
+            <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
+            <li>
+              <a href="/contact" class="nav-link px-2 text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div
+        class="d-flex flex-column justify-content-center align-items-center"
+        style="height: 100vh"
+      >
+        <h1 class="fw-bold" style="font-size: 10rem">404</h1>
+        <h1 class="fw-bold" style="font-size: 4rem">Page Not Found</h1>
+      </div>
+    </main>
+    <%- include('include/footer'); -%>
+  </body>
+</html>
