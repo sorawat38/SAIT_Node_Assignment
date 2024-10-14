@@ -36,14 +36,18 @@ const handleFormSubmission = async (req, res) => {
   // log the request body follow the requirement
   console.log(req.body);
 
-  // handle when validate error
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    console.log(errors);
-    return res.render("contact", { request: req.body, errors: errors });
-  }
-
   try {
+    // handle when validate error
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors);
+      const contacts = await Contact.findAll(); // query for contact page, otherwise it will not generate. This is not good for performance but for user experience, need to do this
+      return res.render("contact", {
+        request: req.body,
+        errors: errors,
+        contacts,
+      }); // this is for show error tag. I can use redirect instead if I don't need send object
+    }
     // save data into database
     await Contact.create({
       firstName: req.body.contactFirstName,
