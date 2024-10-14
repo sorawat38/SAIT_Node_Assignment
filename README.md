@@ -55,7 +55,7 @@ To run the application in development mode, use the following command:
 npm start
 ```
 
-## Running the Application with Docker Compose
+### Running the Application with Docker Compose
 
 To run the application using Docker Compose, follow these steps:
 
