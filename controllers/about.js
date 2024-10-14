@@ -6,7 +6,8 @@ const renderAboutPage = async (req, res) => {
     const employees = await Employee.findAll();
     res.render("about", { employees });
   } catch (error) {
-    console.error(error); // TODO: handle error later
+    console.error(error);
+    res.render("about", { employees: [] });
   }
 };
 

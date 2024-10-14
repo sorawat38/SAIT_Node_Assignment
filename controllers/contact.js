@@ -61,7 +61,7 @@ const handleFormSubmission = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error(error); // TODO: handle error later
+    console.error(error);
   }
 };
 
@@ -71,7 +71,8 @@ const renderContactPage = async (req, res) => {
     const contacts = await Contact.findAll();
     res.render("contact", { contacts });
   } catch (error) {
-    console.error(error); // TODO: handle error later
+    console.error(error);
+    res.render("contact", { contacts: [] });
   }
 };
 
@@ -84,7 +85,7 @@ const deleteContactHandler = async (req, res) => {
     });
     res.redirect("/contact");
   } catch (error) {
-    console.error(error); // TODO: handle error later
+    console.error(error);
   }
 };
 
