@@ -2,6 +2,7 @@ const Employee = require("../models/employee");
 
 const renderAboutPage = async (req, res) => {
   try {
+    // query all employee
     const employees = await Employee.findAll();
     res.render("about", { employees });
   } catch (error) {

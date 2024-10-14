@@ -67,7 +67,7 @@ const handleFormSubmission = async (req, res) => {
 
 const renderContactPage = async (req, res) => {
   try {
-    // query data from database
+    // query contact data from database
     const contacts = await Contact.findAll();
     res.render("contact", { contacts });
   } catch (error) {
