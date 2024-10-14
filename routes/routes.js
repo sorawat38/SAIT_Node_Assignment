@@ -1,4 +1,5 @@
 const express = require("express");
+const { renderHomePage } = require("../controllers/homepage");
 const { renderAboutPage } = require("../controllers/about");
 const {
   validateContactForm,
@@ -10,9 +11,7 @@ const {
 const router = express.Router();
 
 // Home (root) page
-router.get("/", (req, res) => {
-  res.render("index");
-});
+router.get("/", renderHomePage);
 
 // About page
 router.get("/about", renderAboutPage);
