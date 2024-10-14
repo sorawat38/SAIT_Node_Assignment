@@ -33,6 +33,9 @@ const validateContactForm = [
 ];
 
 const handleFormSubmission = async (req, res) => {
+  // log the request body follow the requirement
+  console.log(req.body);
+
   // handle when validate error
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
