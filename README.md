@@ -49,7 +49,15 @@ This will install all necessary packages specified in the `package.json` file.
 
 ### Running the Application in Development Mode
 
-To run the application in development mode, use the following command:
+To run the application in development mode (this will use the `nodemon`), use the following command:
+
+```sh
+npm run dev
+```
+
+### Running the Application
+
+To run the application, use the following command:
 
 ```sh
 npm start
